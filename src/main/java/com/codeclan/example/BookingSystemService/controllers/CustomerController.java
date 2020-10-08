@@ -24,7 +24,7 @@ public class CustomerController {
             @RequestParam(name="course", required = false) Long id
     ){
         if (id != null && town != null && age != null) {
-            return new ResponseEntity<>(customerRepository.findByAgeGreaterThanAndTownAndBookingsCourseId(age, town, id), HttpStatus.OK);
+            return new ResponseEntity<>(customerRepository.findByAgeGreaterThanAndTownIgnoreCaseAndBookingsCourseId(age, town, id), HttpStatus.OK);
         }
 
         if (id != null && town != null) {

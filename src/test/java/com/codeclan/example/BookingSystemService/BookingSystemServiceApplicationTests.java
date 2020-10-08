@@ -80,7 +80,7 @@ class BookingSystemServiceApplicationTests {
 
 	@Test
 	public void canGetAllCustomersOverAGivenAgeAndInAGivenTownAndOnAGivenCourse(){
-		List<Customer> found = customerRepository.findByAgeGreaterThanAndTownAndBookingsCourseId(25,"Dundee", 1L);
+		List<Customer> found = customerRepository.findByAgeGreaterThanAndTownIgnoreCaseAndBookingsCourseId(25,"Dundee", 1L);
 		assertEquals(1, found.size());
 	}
 }
